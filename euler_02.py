@@ -3,7 +3,7 @@ Sum of even-valued Fibonacci terms under 4_000_000
 https://projecteuler.net/problem=2
 '''
 
-def Fibonacci (max_val):
+def fibonacci (max_val):
     fib_list = [1,2]
     new_term = 0
     while new_term < max_val:
@@ -15,4 +15,4 @@ def Fibonacci (max_val):
     return sum(fib_even)
 
 if __name__=='__main__':
-    print (Fibonacci (4000000))
+    print (fibonacci (4000000))
