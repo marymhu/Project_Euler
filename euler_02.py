@@ -4,15 +4,18 @@ https://projecteuler.net/problem=2
 '''
 
 def fibonacci (max_val):
-    fib_list = [1,2]
-    new_term = 0
-    while new_term < max_val:
-        new_term = sum(fib_list[-2:])
-        if new_term < max_val:
-            fib_list.append(sum(fib_list[-2:]))
-    # Reducing Fibonacci terms list to even values
-    fib_even = [val for val in fib_list if val%2 == 0]
-    return sum(fib_even)
+    '''
+    Sum of even-valued Fibonacci terms under max_val
+    '''
+    # Init with first terms
+    a, b = 1, 2
+    sum = 2
+    next_term = a + b
+    while next_term < max_val:
+        sum = sum+next_term if next_term%2 == 0 else sum
+        a, b = b, next_term
+        next_term = a+b
+    return sum
 
 if __name__=='__main__':
     print (fibonacci (4000000))
