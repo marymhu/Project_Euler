@@ -20,4 +20,5 @@ def smallest_multiple (max_term):
     return value
     
 if __name__=='__main__':
+    assert 2520 == smallest_multiple(10), "Error while computing smallest multiple of numbers 1 .. 10"
     print (smallest_multiple(20))

@@ -22,4 +22,7 @@ def square_sum (max_term):
     return sum*sum
     
 if __name__=='__main__':
+    # Check provided test case
+    assert 2640 == (square_sum(10) - sum_square(10)), "Error while computing Sum square difference for 10 first natural numbers"
+    # Get result
     print (str(square_sum(100) - sum_square(100)))
