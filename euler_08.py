@@ -1,31 +1,34 @@
-'''
+"""
 Largest product in a series
 https://projecteuler.net/problem=8
-'''
+"""
 
-def product_list (in_list):
-    '''
+
+def product_list(in_list):
+    """"
     Product of input list elements
-    '''
+    """
     prod = 1
     for item in in_list:
         prod = prod * item
     return prod
-    
-def largest_product (input, digits):
-    '''
+
+
+def largest_product(val, digits):
+    """
     Compute the Largest product of adjacent digits in the input
-    '''
-    in_list = [int(x) for x in list(input)]
+    """
+    in_list = [int(x) for x in list(val)]
     largest_prod = 0
     for i in range(len(in_list) - digits + 1):
         cur_prod = product_list(in_list[i:i+digits])
         largest_prod = cur_prod if cur_prod > largest_prod else largest_prod
     return largest_prod
-    
-if __name__=='__main__':
+
+
+if __name__ == '__main__':
     # Input value
-    input = "73167176531330624919225119674426574742355349194934\
+    value = "73167176531330624919225119674426574742355349194934\
 96983520312774506326239578318016984801869478851843\
 85861560789112949495459501737958331952853208805511\
 12540698747158523863050715693290963295227443043557\
@@ -46,8 +49,7 @@ if __name__=='__main__':
 05886116467109405077541002256983155200055935729725\
 71636269561882670428252483600823257530420752963450"
     # Check test case provided
-    assert 5832 == largest_product(input, 4), "Error while computing largest product of 4 adjacent digits"
+    assert 5832 == largest_product(value, 4), "Error while computing largest product of 4 adjacent digits"
     
     # Get result
-    print(largest_product(input, 13))
-    
+    print(largest_product(value, 13))
