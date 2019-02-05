@@ -8,12 +8,13 @@ def compute_prime_sum(max_val):
     """
     Compute the sum of the prime numbers below max_val using the Sieve of Eratosthenes
     """
-    candidates = [x for x in range(2, max_val) if x <= 3 or x % 2 != 0 or x % 3 != 0]
+    candidates = [True] * max_val
     sum_prime = 0
-    while candidates:
-        current = candidates[0]
-        sum_prime += current
-        candidates = [x for x in candidates if x > current and x % current != 0]
+    for val in range(2, max_val):
+        if candidates[val]:
+            sum_prime += val
+            for m in range(val * val, max_val, val):
+                candidates[m] = False            
     return sum_prime
 
 
