@@ -11,18 +11,19 @@ def is_pythagorean_triplet(x, y, z):
         return False
 
 
-def triplet():
+def triplet(triplet_sum):
     """
-    Find Pythagorean Triplet with a+b+c = 1000
+    Find Pythagorean Triplet with a+b+c = triplet_sum
     Return a*b*c
     """
-    for a in range(1, 1000):
-        for b in range(1, 1000):
-            for c in range(1, 1000):
+    for a in range(1, triplet_sum - 3):
+        for b in range(a, triplet_sum - 3):
+            for c in range(b, triplet_sum - 3):
                 if is_pythagorean_triplet(a, b, c):
-                    if a + b + c == 1000:
+                    if a + b + c == triplet_sum:
                         return a * b * c
     return 0
 
+
 if __name__ == '__main__':
-    print(triplet())
+    print(triplet(1000))
