@@ -9,8 +9,8 @@ def sum_first_digits(dgt, values):
     """
     Sum all the values and return the first dgt digits
     """
-    total = sum(values);
-    total_str = str(total);
+    total = sum(values)
+    total_str = str(total)
     return total_str[:dgt]
 
 
@@ -114,7 +114,7 @@ if __name__ == '__main__':
                     77158542502016545090413245809786882778948721859617,
                     72107838435069186155435662884062257473692284509516,
                     20849603980134001723930671666823555245252804609722,
-                    53503534226472524250874054075591789781264330331690];
+                    53503534226472524250874054075591789781264330331690]
     start = time()
     print(sum_first_digits(10, input_values))
     print("Exectution time: " + str(time() - start))
