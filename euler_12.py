@@ -4,6 +4,7 @@ https://projecteuler.net/problem=12
 """
 from time import time
 
+
 def generate_next_triangle(rank, val):
     """
     Generate the next triangle number
@@ -25,7 +26,7 @@ def find_divisible_triangle(divisor_number):
         for div in range (2, int(current_triangle_value ** 0.5) + 1):
             if current_triangle_value % div == 0:
                 # if div is sqrt(value), only one divisors is found
-                if (div * div == current_triangle_value):
+                if div * div == current_triangle_value:
                     divisors += 1
                 else:
                     divisors += 2
@@ -39,4 +40,4 @@ if __name__ == '__main__':
     # Get Result
     start = time()
     print(find_divisible_triangle(500))
-    print("Exectution time: " + str(time() - start))
+    print("Execution time: " + str(time() - start))

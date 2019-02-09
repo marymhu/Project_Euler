@@ -117,4 +117,4 @@ if __name__ == '__main__':
                     53503534226472524250874054075591789781264330331690]
     start = time()
     print(sum_first_digits(10, input_values))
-    print("Exectution time: " + str(time() - start))
+    print("Execution time: " + str(time() - start))
