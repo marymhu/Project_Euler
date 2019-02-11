@@ -22,6 +22,9 @@ def lattice_path_length(size):
 
 
 if __name__ == '__main__':
+    # Check provided test case
+    assert 6 == lattice_path_length(2)
+
     start = time()
     print(lattice_path_length(20))
     print("Execution time: " + str(time() - start))
